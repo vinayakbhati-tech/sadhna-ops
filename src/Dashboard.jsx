@@ -1,3 +1,5 @@
+import Navbar from './Navbar'
+
 const staffData = [
   { name: "Ramesh Kumar", tasksToday: 12, status: "On Track" },
   { name: "Rohit Chaudhary", tasksToday: 8, status: "Behind" },
@@ -7,23 +9,26 @@ const staffData = [
 
 function Dashboard() {
   return (
-    <div className="dashboard">
-      <h1>Staff Performance</h1>
-      <p>Aaj ka production status</p>
+    <>
+      <Navbar />
+      <div className="dashboard">
+        <h1>Staff Performance</h1>
+        <p>Today's production status</p>
 
-      <div className="card-grid">
-        {staffData.map((staff, index) => (
-          <div className="staff-card" key={index}>
-            <div className="avatar">{staff.name.charAt(0)}</div>
-            <h3>{staff.name}</h3>
-            <p className="tasks">{staff.tasksToday} tasks completed</p>
-            <span className={`status ${staff.status === "On Track" ? "good" : "warning"}`}>
-              {staff.status}
-            </span>
-          </div>
-        ))}
+        <div className="card-grid">
+          {staffData.map((staff, index) => (
+            <div className="staff-card" key={index}>
+              <div className="avatar">{staff.name.charAt(0)}</div>
+              <h3>{staff.name}</h3>
+              <p className="tasks">{staff.tasksToday} tasks completed</p>
+              <span className={`status ${staff.status === "On Track" ? "good" : "warning"}`}>
+                {staff.status}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

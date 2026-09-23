@@ -137,4 +137,112 @@ body {
 .status.warning {
   background-color: #4a2020;
   color: #ff6b6b;
+}.task-entry {
+  padding: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+}
+
+.task-entry h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.task-entry > p {
+  color: #999;
+  margin-bottom: 25px;
+}
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.entry-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.entry-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: white;
+  box-sizing: border-box;
+}
+
+.entry-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6c5ce7;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.entry-form button:hover {
+  background-color: #5a4bd1;
+}
+
+.entry-list h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.empty {
+  color: #666;
+}
+
+.entry-card {
+  background-color: #1a1a1a;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entry-card .time {
+  color: #666;
+  font-size: 12px;
+}.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.navbar-logo {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.navbar-links a:hover {
+  color: #6c5ce7;
 }
