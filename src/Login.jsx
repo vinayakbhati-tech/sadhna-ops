@@ -1,23 +1,39 @@
+import sadhnaLogo from './assets/sadhna-logo.png'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { setRole } from './utils'
+import { supabase } from './supabaseClient'
 
 function Login() {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRoleValue] = useState('staff')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  function handleLogin(e) {
+  async function handleLogin(e) {
     e.preventDefault()
-    setRole(role)
+    setError('')
+    setLoading(true)
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    })
+
+    setLoading(false)
+
+    if (error) {
+      setError('Login failed: ' + error.message)
+      return
+    }
+
     navigate('/dashboard')
   }
 
   return (
     <div className="login-page">
       <div className="login-card">
-        <h1>Sadhna Ops</h1>
+        <img src={sadhnaLogo} alt="Sadhna.co" className="login-logo-img" />
         <p>Complete Operations, At one place</p>
 
         <form onSubmit={handleLogin}>
@@ -43,18 +59,12 @@ function Login() {
             />
           </div>
 
-          <div>
-            <label>Login as</label>
-            <select value={role} onChange={(e) => setRoleValue(e.target.value)}>
-              <option value="staff">Staff</option>
-              <option value="admin">Admin</option>
-            </select>
-          </div>
-
-          <button type="submit">Login</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
         </form>
 
-        <p className="demo-note">Demo mode: any email/password works</p>
+        {error && <p className="login-error">{error}</p>}
       </div>
     </div>
   )

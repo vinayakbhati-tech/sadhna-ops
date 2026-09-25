@@ -2,10 +2,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './Login'
 import Dashboard from './Dashboard'
-import TaskEntry from './TaskEntry'
-import AdminPanel from './AdminPanel'
+import CheckpointForm from './CheckpointForm'
 import ProtectedRoute from './ProtectedRoute'
-
+import PackingEntry from './PackingEntry'
 function App() {
   return (
     <BrowserRouter>
@@ -14,12 +13,11 @@ function App() {
         <Route path="/dashboard" element={
           <ProtectedRoute><Dashboard /></ProtectedRoute>
         } />
-        <Route path="/tasks" element={
-          <ProtectedRoute><TaskEntry /></ProtectedRoute>
-        } />
-        <Route path="/admin" element={
-          <ProtectedRoute adminOnly={true}><AdminPanel /></ProtectedRoute>
-        } />
+        <Route path="/checkpoint" element={
+          <ProtectedRoute><CheckpointForm /></ProtectedRoute>
+        } /><Route path="/packing" element={
+  <ProtectedRoute><PackingEntry /></ProtectedRoute>
+} />
       </Routes>
     </BrowserRouter>
   )
