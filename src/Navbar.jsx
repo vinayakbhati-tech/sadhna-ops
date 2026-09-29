@@ -35,6 +35,7 @@ function Navbar() {
       <div className="navbar-links">
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/checkpoint">Submit Checkpoint</Link><Link to="/packing">Packing Entry</Link>
+        <Link to="/production">Production Entry</Link>
         {profile && (
           <span className="navbar-user">{profile.full_name} · {profile.role}</span>
         )}

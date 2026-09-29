@@ -5,6 +5,7 @@ import Dashboard from './Dashboard'
 import CheckpointForm from './CheckpointForm'
 import ProtectedRoute from './ProtectedRoute'
 import PackingEntry from './PackingEntry'
+import ProductionEntry from './ProductionEntry'
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,9 @@ function App() {
         } /><Route path="/packing" element={
   <ProtectedRoute><PackingEntry /></ProtectedRoute>
 } />
+        <Route path="/production" element={
+          <ProtectedRoute><ProductionEntry /></ProtectedRoute>
+        } />
       </Routes>
     </BrowserRouter>
   )

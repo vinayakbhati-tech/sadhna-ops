@@ -405,3 +405,35 @@ body {
   font-size: 14px;
   text-align: center;
 }
+/* ===== PRODUCTION ENTRY ===== */
+.production-time-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.production-time-row > div {
+  flex: 1 1 140px;
+}
+
+.entry-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+  background-color: #fffdf9;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.entry-form textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.checkpoint-message.production-error {
+  background-color: #f8e4d8;
+  color: var(--orange);
+}
