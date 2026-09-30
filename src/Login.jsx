@@ -33,7 +33,9 @@ function Login() {
   return (
     <div className="login-page">
       <div className="login-card">
-        <img src={sadhnaLogo} alt="Sadhna.co" className="login-logo-img" />
+        <div className="login-logo-wrap">
+          <img src={sadhnaLogo} alt="Sadhna.co" className="login-logo-img" />
+        </div>
         <p>Complete Operations, At one place</p>
 
         <form onSubmit={handleLogin}>

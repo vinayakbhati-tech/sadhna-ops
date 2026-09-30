@@ -437,3 +437,42 @@ body {
   background-color: #f8e4d8;
   color: var(--orange);
 }
+
+/* ===== LOGO — CENTER ALIGN ===== */
+/* Logo stays on the left of the navbar, vertically centered */
+.navbar-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.navbar-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Wider card + less side padding so the login logo can be bigger */
+.login-card {
+  width: 380px;
+  max-width: calc(100% - 32px);
+  padding: 40px 30px;
+}
+
+.login-logo-img {
+  max-width: 287px; /* the logo file is 287px wide — larger would look blurry */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

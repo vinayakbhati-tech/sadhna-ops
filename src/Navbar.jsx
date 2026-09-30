@@ -31,7 +31,9 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <img src={sadhnaLogo} alt="Sadhna.co" className="navbar-logo-img" />
+      <div className="navbar-logo-wrap">
+        <img src={sadhnaLogo} alt="Sadhna.co" className="navbar-logo-img" />
+      </div>
       <div className="navbar-links">
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/checkpoint">Submit Checkpoint</Link><Link to="/packing">Packing Entry</Link>
